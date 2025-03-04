@@ -114,8 +114,6 @@ def main():
         input("Presiona Enter para continuar...")  # Pausa antes del siguiente turno
         turno_actual = (turno_actual + 1) % len(jugadores)  # Cambia al siguiente jugador
 
-
-# Ejecuta el juego si el script se ejecuta directamente
-if __name__ == "__main__":
+if __name__ == "__main__": # Ejecuta el juego si el script se ejecuta directamente
     main()
 
