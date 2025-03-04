@@ -4,25 +4,24 @@ import os  # Importa la librería para limpiar la consola
 FICHAS_POR_JUGADOR = 4  # Número de fichas que tiene cada jugador
 
 
-class Dados:
-    """Clase que representa los dados del juego."""
+class Dados:  
+#---Clase que representa los dados del juego---
 
     def __init__(self):
         self.num_dados = 2  # Se usan dos dados en cada turno
 
-    def lanzar_dados(self):
-        """Genera dos números aleatorios entre 1 y 6 simulando el lanzamiento de dados."""
+    def lanzar_dados(self): 
+    #---Genera dos números aleatorios entre 1 y 6 simulando el lanzamiento de dados.---
         dado1 = random.randint(1, 6)
         dado2 = random.randint(1, 6)
         return dado1, dado2
 
-    def es_cinco(self, dado1, dado2):
-        """Verifica si alguno de los dados es 5 o si la suma de ambos es 5."""
+    def es_cinco(self, dado1, dado2): #---Verifica si alguno de los dados es 5 o si la suma de ambos es 5---
         return (dado1 + dado2 == 5) or (dado1 == 5) or (dado2 == 5)
 
 
-class Tablero:
-    """Clase que representa el tablero del juego."""
+class Tablero: 
+#---Clase que representa el tablero del juego---
 
     def __init__(self):
         # Representación en ASCII del tablero con posiciones fijas de casillas y fichas
@@ -50,7 +49,7 @@ class Tablero:
         }
 
     def dibujar_tablero(self):
-        """Dibuja el tablero con las posiciones actualizadas de las fichas."""
+        #---Dibuja el tablero con las posiciones actualizadas de las fichas---
         # Copia el diseño del tablero para evitar modificar el original
         tablero_actual = [fila.copy() for fila in self.diseno]
 
@@ -64,7 +63,7 @@ class Tablero:
             print("".join(fila))
 
     def sacar_ficha_de_carcel(self, jugador, ficha):
-        """Mueve una ficha del jugador desde la cárcel a su punto de inicio."""
+        #---Mueve una ficha del jugador desde la cárcel a su punto de inicio---
         if ficha in self.posiciones[jugador]:
             fila_carcel, col_carcel = self.posiciones[jugador][ficha]
             self.diseno[fila_carcel][col_carcel] = "*****"  # Limpia la celda de la cárcel
@@ -73,12 +72,12 @@ class Tablero:
 
 
 def clear_console():
-    """Limpia la consola antes de cada turno para mejorar la visualización."""
+    #---Limpia la consola antes de cada turno para mejorar la visualización---
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def main():
-    """Función principal que maneja el flujo del juego."""
+    #---Función principal que maneja el flujo del juego---
     tablero = Tablero()  # Crea el tablero
     dados = Dados()  # Crea los dados
 
