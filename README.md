@@ -1,5 +1,5 @@
-import random  """Importa la librería para generar números aleatorios"""
-import os  """Importa la librería para limpiar la consola"""
+import random  #Importa la librería para generar números aleatorios
+import os  #Importa la librería para limpiar la consola"""
 
 FICHAS_POR_JUGADOR = 4  # Número de fichas que tiene cada jugador
 
